@@ -1,0 +1,12 @@
+{
+    "Format": "1.28.0",
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Data/Mail",
+            "Entries": {
+                "YouNeedToEat.StartFood": "{{i18n:mail.startfood}}"
+            }
+        }
+    ]
+}

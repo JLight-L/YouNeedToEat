@@ -3,8 +3,8 @@ namespace YouNeedToEat
     public class ModData
     {
         public bool HasReceivedStarterFood { get; set; } = false;
-        public bool AteToday { get; set; } = false;
-        public bool AteYesterday { get; set; } = false;
+        public bool AteRegularlyToday { get; set; } = false;
+        public bool AteRegularlyYesterday { get; set; } = false;
         public int ConsecutiveEatDays { get; set; } = 0;
         
         // 规律饮食模块

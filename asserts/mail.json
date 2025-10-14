@@ -1,3 +1,4 @@
 {
-  "YouNeedToEat.StarterFood": "亲爱的 @：^新的农场主，记得按时吃饭哦～^这里有一些食物，生活愉快~%item object 194 5 %%"
+  "YouNeedToEat.StartFood1": "亲爱的 @：^新的农场主，记得按时吃饭哦～^这里有一些食物，生活愉快~%item object 195 28 %%",
+  "YouNeedToEat.StartFood2": "还有一些%item object 216 56 %%"
 }

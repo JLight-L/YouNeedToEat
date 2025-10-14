@@ -6,5 +6,11 @@
   "UniqueID": "JLight.YouNeedToEat",
   "EntryDll": "YouNeedToEat.dll",
   "MinimumApiVersion": "3.0.0",
-  "UpdateKeys": []
+  "UpdateKeys": [],
+  "Dependencies": [
+    {
+      "UniqueID": "Pathoschild.ContentPatcher",
+      "IsRequired": true
+    }
+  ]
 }

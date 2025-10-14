@@ -1,8 +1,11 @@
 {
     "mail": {
-        "startfood": "亲爱的 @：^新的农场主，记得按时吃饭哦～^这里有一些食物，生活愉快~%item object {id} {stack} %%"
+        "startfood1": "亲爱的 @：^新的农场主，记得按时吃饭哦～^这里有一些食物，生活愉快~%item object 195 56 %%",
+        "StartFood2": "还有一些%item object 216 56 %%"
     },
     "hud": {
-        "breakfast": "早餐时间到！"
+        "breakfast": "早餐时间到！",
+        "lunch": "午餐时间到！",
+        "dinner": "晚餐时间到！"
     }
 }
