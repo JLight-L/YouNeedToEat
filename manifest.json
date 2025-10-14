@@ -1,0 +1,10 @@
+{
+  "Name": "YouNeedToEat",
+  "Author": "JLight",
+  "Version": "1.0.0",
+  "Description": "A mod that reminds you to eat like in real life.",
+  "UniqueID": "JLight.YouNeedToEat",
+  "EntryDll": "YouNeedToEat.dll",
+  "MinimumApiVersion": "3.0.0",
+  "UpdateKeys": []
+}
