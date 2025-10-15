@@ -1,4 +1,4 @@
 {
-    "mail.startfood1": "Dear @: ^New farm owner, remember to eat on time~^ Here is some food, wishing you a happy life~ %item object 216 56 %%",
-    "mail.startfood2": "And some more ~~ %item object 223 28 %% %item object 210 28 %% %item object 240 14 %%"
+    "mail.startfood1": "Dear @: ^New farm owner, remember to eat on time~^ Here is some food, wishing you a happy life~ %item object 216 56 %%[#]Complimentary Food 1",
+    "mail.startfood2": "And some more ~~ %item object 223 28 %% %item object 210 28 %% %item object 240 14 %%[#]Complimentary Food 2"
 }

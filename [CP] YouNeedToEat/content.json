@@ -8,13 +8,6 @@
                 "YouNeedToEat.StartFood1": "{{i18n:mail.startfood1}}",
                 "YouNeedToEat.StartFood2": "{{i18n:mail.startfood2}}"
             }
-        },{
-            "Action": "EditData",
-            "Target": "Strings/Letters",
-            "Entries": {
-                "YouNeedToEat.startfood1": "农场主的早餐",
-                "YouNeedToEat.startfood2": "农场主的加餐"
-            }
         }
     ]
 }
