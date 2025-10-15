@@ -1,11 +1,12 @@
 {
-  "Name": "You Need To Eat",
+  "Name": "You Need To Eat [CP]",
   "Author": "JLight",
   "Version": "1.0.0",
   "Description": "A mod that reminds you to eat like in real life.",
-  "UniqueID": "JLight.YouNeedToEat",
-  "EntryDll": "YouNeedToEat.dll",
+  "UniqueID": "JLight.YouNeedToEat.CP",
   "MinimumApiVersion": "4.0",
   "UpdateKeys": [],
-  "Dependencies": []
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  }
 }

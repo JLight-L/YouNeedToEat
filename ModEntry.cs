@@ -9,11 +9,10 @@ public class ModEntry : Mod
 {
     public ModData Data { get; private set; } = new ModData();
     public static ModConfig Config { get; private set; } = new ModConfig();
-    private Item? lastItemEaten;
+    // private Item? lastItemEaten;
 
     public override void Entry(IModHelper helper)
     {
-        Data = helper.Data.ReadSaveData<ModData>("YouNeedToEatSave") ?? new ModData();
         Config = Helper.ReadConfig<ModConfig>();
         helper.Events.GameLoop.SaveLoaded += OnSaveLoaded;
         helper.Events.GameLoop.DayStarted += OnDayStarted;
@@ -24,17 +23,19 @@ public class ModEntry : Mod
 
     private void OnSaveLoaded(object? sender, SaveLoadedEventArgs e)
     {
-        if (!Data.HasReceivedStarterFood)
+        Data = Helper.Data.ReadSaveData<ModData>("YouNeedToEatSave") ?? new ModData();
+        if (!Data.HasReceivedStartFood)
         {
             Game1.addMail("YouNeedToEat.StartFood1", false);
             Game1.addMail("YouNeedToEat.StartFood2", false);
-            Data.HasReceivedStarterFood = true;
+            Data.HasReceivedStartFood = true;
             Monitor.Log("Start food sended.", LogLevel.Info);
         }
     }
 
     private void OnDayStarted(object? sender, DayStartedEventArgs e)
     {
+        Data.AteRegularlyYesyesterday = Data.AteRegularlyYesterday;
         Data.AteRegularlyYesterday = Data.AteRegularlyToday;
         Data.AteRegularlyToday = false;
         if (Data.AteRegularlyYesterday ) Data.ConsecutiveEatDays = 0;
@@ -51,10 +52,11 @@ public class ModEntry : Mod
 
     private void OnTimeChanged(object? sender, TimeChangedEventArgs e)
     {
-        var stackCost = Config.StaminaLossPer10min;
-        if (!Data.AteRegularlyToday && !Data.AteRegularlyYesterday) stackCost *= 2;
         if (!Context.IsWorldReady) return;
-        Game1.player.Stamina -= stackCost;
+        var stackCost = Config.StaminaLossPer10min;
+        if (!Data.AteRegularlyYesterday) stackCost *= 2;
+        if (!Data.AteRegularlyYesyesterday && !Data.AteRegularlyYesterday && !Data.AteRegularlyToday) stackCost *= 2;
+        if (!(Game1.player.Stamina <= stackCost*2)) Game1.player.Stamina -= stackCost;
 
         int now = Game1.timeOfDay;          // HHMM 格式
         // 早餐提醒 08:00

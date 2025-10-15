@@ -1,0 +1,9 @@
+D:\SteamLibrary\steamapps\common\Stardew Valley\ModDevelopment\YouNeedToEat\bin\Release\net6.0\YouNeedToEat.deps.json
+D:\SteamLibrary\steamapps\common\Stardew Valley\ModDevelopment\YouNeedToEat\bin\Release\net6.0\YouNeedToEat.dll
+D:\SteamLibrary\steamapps\common\Stardew Valley\ModDevelopment\YouNeedToEat\obj\Release\net6.0\YouNeedToEat.csproj.AssemblyReference.cache
+D:\SteamLibrary\steamapps\common\Stardew Valley\ModDevelopment\YouNeedToEat\obj\Release\net6.0\YouNeedToEat.GeneratedMSBuildEditorConfig.editorconfig
+D:\SteamLibrary\steamapps\common\Stardew Valley\ModDevelopment\YouNeedToEat\obj\Release\net6.0\YouNeedToEat.AssemblyInfoInputs.cache
+D:\SteamLibrary\steamapps\common\Stardew Valley\ModDevelopment\YouNeedToEat\obj\Release\net6.0\YouNeedToEat.AssemblyInfo.cs
+D:\SteamLibrary\steamapps\common\Stardew Valley\ModDevelopment\YouNeedToEat\obj\Release\net6.0\YouNeedToEat.csproj.CoreCompileInputs.cache
+D:\SteamLibrary\steamapps\common\Stardew Valley\ModDevelopment\YouNeedToEat\obj\Release\net6.0\YouNeedToEat.sourcelink.json
+D:\SteamLibrary\steamapps\common\Stardew Valley\ModDevelopment\YouNeedToEat\obj\Release\net6.0\YouNeedToEat.dll
