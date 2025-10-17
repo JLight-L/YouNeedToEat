@@ -1,5 +1,7 @@
 {
     "hud.breakfast": "早餐时间到！",
     "hud.lunch": "午餐时间到！",
-    "hud.dinner": "晚餐时间到！"
+    "hud.dinner": "晚餐时间到！",
+    "hud.hungry1": "今天有点饿",
+    "hud.hungry2": "今天好饿"
 }

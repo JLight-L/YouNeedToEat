@@ -38,7 +38,11 @@ public class ModEntry : Mod
         Data.AteRegularlyYesyesterday = Data.AteRegularlyYesterday;
         Data.AteRegularlyYesterday = Data.AteRegularlyToday;
         Data.AteRegularlyToday = false;
-        if (Data.AteRegularlyYesterday ) Data.ConsecutiveEatDays = 0;
+        if (!Data.AteRegularlyYesterday) Data.ConsecutiveEatDays = 0;
+        if (!Data.AteRegularlyYesterday && !Data.AteRegularlyYesyesterday)
+            Game1.addHUDMessage(new HUDMessage(Helper.Translation.Get("hud.hungry1"), 2));
+        else if (!Data.AteRegularlyYesterday)
+            Game1.addHUDMessage(new HUDMessage(Helper.Translation.Get("hud.hungry2"), 2));
 
         Data.LastMealTime = -1;
         Data.BreakfastPushed = false;
