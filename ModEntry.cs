@@ -32,6 +32,10 @@ public class ModEntry : Mod
         }
     }
 
+    bool breakfastPushed = false;
+    bool lunchPushed = false;
+    bool dinnerPushed = false;
+
     private void OnDayStarted(object? sender, DayStartedEventArgs e)
     {
         Data.AteRegularlyYesyesterday = Data.AteRegularlyYesterday;
@@ -44,10 +48,12 @@ public class ModEntry : Mod
         else if (!Data.AteRegularlyYesterday)
             Game1.addHUDMessage(new HUDMessage(Helper.Translation.Get("hud.hungry1"), 2));
 
-        Data.LastMealTime = -1;
-        Data.BreakfastPushed = false;
-        Data.LunchPushed = false;
-        Data.DinnerPushed = false;
+        breakfastPushed = false;
+        lunchPushed = false;
+        dinnerPushed = false;
+        Data.BreakfastAte = false;
+        Data.LunchAte = false;
+        Data.DinnerAte = false;
     }
 
     private void OnTimeChanged(object? sender, TimeChangedEventArgs e)
@@ -58,32 +64,28 @@ public class ModEntry : Mod
         if (!Data.AteRegularlyYesyesterday && !Data.AteRegularlyYesterday && !Data.AteRegularlyToday) stackCost *= 2;
         if (!(Game1.player.Stamina <= stackCost * 4)) Game1.player.Stamina -= stackCost;
 
-        int now = Game1.timeOfDay;          // HHMM 格式
-        // 早餐提醒 06:00-08:00-11:00
-        if (!Data.BreakfastPushed && now >= 800 && Data.LastMealTime < 600)
+        int now = Game1.timeOfDay;
+        if (!breakfastPushed && now >= 800 && !Data.BreakfastAte)
         {
             Game1.addHUDMessage(new HUDMessage(Helper.Translation.Get("hud.breakfast"), 2));
-            Data.BreakfastPushed = true;
+            breakfastPushed = true;
         }
-        // 午餐提醒 11:00-13:00-16:00
-        if (!Data.LunchPushed && now >= 1300 && Data.LastMealTime < 1100)
+        if (!lunchPushed && now >= 1300 && !Data.LunchAte)
         {
             Game1.addHUDMessage(new HUDMessage(Helper.Translation.Get("hud.lunch"), 2));
-            Data.LunchPushed = true;
+            lunchPushed = true;
         }
-        // 晚餐提醒 16:00-20:00-26:00
-        if (!Data.DinnerPushed && now >= 2000 && Data.LastMealTime < 1600)
+        if (!dinnerPushed && now >= 2000 && !Data.DinnerAte)
         {
             Game1.addHUDMessage(new HUDMessage(Helper.Translation.Get("hud.dinner"), 2));
-            Data.DinnerPushed = true;
+            dinnerPushed = true;
         }
     }
 
     bool _isEatingNow = false;
     private void OnUpdateTicked(object? sender, UpdateTickedEventArgs e)
     {
-        // if (!Context.IsWorldReady) return;
-        // _lastStamina = (int)Game1.player.Stamina; // 实时缓存
+        if (!Context.IsWorldReady) return;
         var farmer = Game1.player;
         if (farmer != null)
         {
@@ -102,7 +104,13 @@ public class ModEntry : Mod
 
     private void OnEating()
     {
-        Data.LastMealTime = Game1.timeOfDay;
+        var nowTime = Game1.timeOfDay;                // HHMM 格式
+        if (nowTime >= 600 && nowTime < 1100)         // 早餐提醒 06:00-08:00-11:00
+            Data.BreakfastAte = true;
+        else if (nowTime >= 1100 && nowTime < 1600)   // 午餐提醒 11:00-13:00-16:00
+            Data.LunchAte = true;
+        else if (nowTime >= 1600 && nowTime < 2600)   // 晚餐提醒 16:00-20:00-26:00
+            Data.DinnerAte = true;
     }
 
     private void OnSaving(object? sender, SavingEventArgs e)

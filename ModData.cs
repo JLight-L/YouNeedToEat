@@ -9,9 +9,8 @@ namespace YouNeedToEat
         public int ConsecutiveEatDays { get; set; } = 0;
         
         // 规律饮食模块
-        public int LastMealTime { get; set; } = -1;   // 最后一次进食的游戏分钟
-        public bool BreakfastPushed { get; set; } = false;
-        public bool LunchPushed { get; set; } = false;
-        public bool DinnerPushed { get; set; } = false;
+        public bool BreakfastAte { get; set; } = false;
+        public bool LunchAte { get; set; } = false;
+        public bool DinnerAte { get; set; } = false;
     }
 }
