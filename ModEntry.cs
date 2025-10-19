@@ -108,9 +108,16 @@ public class ModEntry : Mod
         if (nowTime >= 600 && nowTime < 1100)         // 早餐提醒 06:00-08:00-11:00
             Data.BreakfastAte = true;
         else if (nowTime >= 1100 && nowTime < 1600)   // 午餐提醒 11:00-13:00-16:00
+        {
             Data.LunchAte = true;
+            if (Data.BreakfastAte == true) Data.AteRegularlyToday = true;
+        }
         else if (nowTime >= 1600 && nowTime < 2600)   // 晚餐提醒 16:00-20:00-26:00
-            Data.DinnerAte = true;
+        {
+            Data.DinnerAte = true; 
+            if (Data.LunchAte == true || Data.BreakfastAte == true) Data.AteRegularlyToday = true;
+        }
+            
     }
 
     private void OnSaving(object? sender, SavingEventArgs e)
