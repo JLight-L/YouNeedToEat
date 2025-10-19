@@ -1,4 +1,4 @@
-<p align="right">
+<p align="left">
   <a href="README.md">🔤 English README</a>
 </p>
 

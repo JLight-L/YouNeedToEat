@@ -1,4 +1,4 @@
-<p align="right">
+<p align="left">
   <a href="README.zh.md">🔤 中文README</a>
 </p>
 
