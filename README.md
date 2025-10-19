@@ -1,4 +1,4 @@
-🔤 Language Navigation | 语言导航：[English Version](#YouNeedToEat-en) | [中文版本](#YouNeedToEat-zh)
+🔤 Language Navigation | 语言导航：[English Version](#youneedtoeat-en) | [中文版本](#youneedtoeat-zh)
 
 # YouNeedToEat - en
 A Stardew Valley mod, aimed at reminding players to eat like in real life.
